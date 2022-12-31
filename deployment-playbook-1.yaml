@@ -1,0 +1,10 @@
+
+
+
+---
+- hosts: localhost
+  connection: localhost
+
+  tasks:
+    - name: ansible k8s module
+      command: kubectl apply -f kubernetes --kubeconfig /home/jenkins-kube-slave-01
