@@ -1,0 +1,26 @@
+ 
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc-deployment-1
+  namespace: abctech-namespace
+  labels:
+    app: abc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abc
+  template:
+    metadata:
+      labels:
+        app: abc
+
+    spec:
+      containers:
+      - name: abc-project-1
+        image:lacroit/abctech-image
+        ports:
+        - containerPort: 8080
